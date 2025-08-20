@@ -5,8 +5,8 @@ import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-file_path = os.path.dirname(os.path.abspath(__file__))
-path = os.path.join(file_path,'data','clean_data.tsv')
+file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # go up one level
+path = os.path.join(file_path, 'data', 'clean_data.tsv')
 train_data = pd.read_csv(path, sep='\t')
 
 
@@ -19,7 +19,7 @@ item_name = 'OPI Infinite Shine, Nail Lacquer Nail Polish, Bubble Bath'
 
 
 
-def content_based_recommendation(train_data, item_name, top_n=10):
+def content_based_recommendation(train_data, item_name=None, top_n=10):
     # Check if item name exists in the dataset
     if item_name not in train_data['Name'].values:
         raise ValueError(f"Item '{item_name}' not found in the dataset.")

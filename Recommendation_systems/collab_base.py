@@ -3,9 +3,10 @@ import os
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-file_path = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # go up one level
 path = os.path.join(file_path, 'data', 'clean_data.tsv')
 train_data = pd.read_csv(path, sep='\t')
+
 
 def collaborative_filtering(train_data, target_user_id, top_n=10):
     
