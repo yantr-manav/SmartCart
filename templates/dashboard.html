@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Cart - Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.css" rel="stylesheet" type="text/css" />
+  <style>
+    /* Typing Animation */
+    .typing {
+      border-right: 3px solid #00bcd4;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(20, end), blink .7s infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #00bcd4; }
+    }
+    /* Smooth fade-in */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-100 via-white to-gray-200 flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-base-200 shadow-lg p-6 flex flex-col gap-6 fade-in">
+    <h2 class="text-2xl font-bold text-accent">SmartCart</h2>
+    <div class="avatar">
+      <div class="w-16 rounded-full ring ring-accent ring-offset-base-100 ring-offset-2">
+        <img src="https://i.pravatar.cc/100?img=5" alt="User Profile">
+      </div>
+    </div>
+    <p class="text-gray-700 font-semibold">Hi, User 👋</p>
+    <nav class="flex flex-col gap-3">
+      <a class="btn btn-ghost justify-start">🏠 Dashboard</a>
+      <a class="btn btn-ghost justify-start">🛒 My Orders</a>
+      <a class="btn btn-ghost justify-start">❤️ Wishlist</a>
+      <a class="btn btn-ghost justify-start">⚙️ Settings</a>
+      <a class="btn btn-error text-white mt-auto">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-8 flex flex-col gap-8 fade-in">
+
+    <!-- Welcome Section -->
+    <section>
+      <h1 class="text-4xl font-extrabold text-gray-800 typing">Welcome back to SmartCart!</h1>
+      <p class="text-lg text-gray-600 mt-2">Discover products tailored just for you 🎯</p>
+    </section>
+
+    <!-- Product Showcase -->
+    <section>
+      <h2 class="text-2xl font-bold mb-4 text-gray-700">Recommended for You</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Product Card -->
+        <div class="card bg-base-100 shadow-xl hover:scale-105 transition-transform duration-300">
+          <figure><img src="https://source.unsplash.com/300x200/?shoes" alt="Shoes" /></figure>
+          <div class="card-body">
+            <h3 class="card-title">Stylish Shoes</h3>
+            <p>Comfortable & trendy for daily wear.</p>
+            <div class="card-actions justify-between items-center">
+              <span class="font-bold text-accent">₹2,499</span>
+              <button class="btn btn-accent text-white btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat Cards -->
+        <div class="card bg-base-100 shadow-xl hover:scale-105 transition-transform duration-300">
+          <figure><img src="https://source.unsplash.com/300x200/?watch" alt="Watch" /></figure>
+          <div class="card-body">
+            <h3 class="card-title">Luxury Watch</h3>
+            <p>Elegant design with premium quality.</p>
+            <div class="card-actions justify-between items-center">
+              <span class="font-bold text-accent">₹5,999</span>
+              <button class="btn btn-accent text-white btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl hover:scale-105 transition-transform duration-300">
+          <figure><img src="https://source.unsplash.com/300x200/?headphones" alt="Headphones" /></figure>
+          <div class="card-body">
+            <h3 class="card-title">Wireless Headphones</h3>
+            <p>Noise cancelling, long battery life.</p>
+            <div class="card-actions justify-between items-center">
+              <span class="font-bold text-accent">₹3,499</span>
+              <button class="btn btn-accent text-white btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl hover:scale-105 transition-transform duration-300">
+          <figure><img src="https://source.unsplash.com/300x200/?bag" alt="Bag" /></figure>
+          <div class="card-body">
+            <h3 class="card-title">Leather Backpack</h3>
+            <p>Durable & stylish for work & travel.</p>
+            <div class="card-actions justify-between items-center">
+              <span class="font-bold text-accent">₹4,299</span>
+              <button class="btn btn-accent text-white btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
